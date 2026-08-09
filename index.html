@@ -1,225 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abhilipsa Pati | Data Analyst</title>
-  <link rel="stylesheet" href="style.css"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Abhilipsa Pati — Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<header>
-  <nav>
-    <div class="logo">Abhilipsa Pati</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <div class="brand">
+      <span class="brand-mark">AP</span>
+      <div class="brand-text">
+        <span class="brand-name">Abhilipsa Pati</span>
+        <span class="brand-role">Data Analyst</span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="#about" class="nav-link"><span class="nav-tag">about</span>About</a>
+    <a href="#skills" class="nav-link"><span class="nav-tag">skl</span>Skills</a>
+    <a href="#projects" class="nav-link"><span class="nav-tag">proj</span>Projects</a>
+    <a href="#certifications" class="nav-link"><span class="nav-tag">cert</span>Certifications</a>
+    <a href="#experience" class="nav-link"><span class="nav-tag">exp</span>Experience</a>
+    <a href="#contact" class="nav-link"><span class="nav-tag">msg</span>Contact</a>
   </nav>
-</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Hi, I’m Abhilipsa</h1>
-    <h2>Data Analyst | Analytics & AI Enthusiast</h2>
-    <p>
-      I turn complex data into meaningful insights using Python, SQL, Excel,
-      and Power BI — backed by a strong software development foundation.
-    </p>
-    <a href="#projects" class="btn">View My Work</a>
-  </div>
-
-  <div class="hero-photo">
-    <img src="passport image.jpeg" alt="Abhilipsa Pati">
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <h3>About Me</h3>
-  <p>
-    I am a Computer Science student focused on <strong>Data Analytics and Business Intelligence</strong>.
-    With hands-on experience in analytics projects and a background in software development,
-    I bridge the gap between raw data and informed decision-making.
-  </p>
-  <p>
-    I enjoy working with real-world datasets, uncovering patterns, and building dashboards
-    that help businesses understand performance, customers, and opportunities.
-  </p>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <h3>Skills</h3>
-
-  <div class="grid">
-    <div class="card">
-      <h4>Data Analytics & BI</h4>
-      <ul>
-        <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
-        <li>SQL (MySQL)</li>
-        <li>Excel (Pivot Tables, Power Query)</li>
-        <li>Power BI (DAX, Dashboards)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h4>Analytics + AI</h4>
-      <ul>
-        <li>Exploratory Data Analysis (EDA)</li>
-        <li>Retail & Sales Analytics</li>
-        <li>Customer Segmentation (RFM)</li>
-        <li>Basic ML & NLP Concepts</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h4>Software Development </h4>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Spring Boot, Angular</li>
-        <li>REST APIs & Databases</li>
-      </ul>
+  <div class="sidebar-bottom">
+    <a href="mailto:abhilipsapati2@gmail.com" class="sidebar-btn">Say hello →</a>
+    <div class="sidebar-socials">
+      <a href="https://github.com/AbhilipsaPati0" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/abhilipsa-pati0" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
-</section>
+</aside>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h3>Data Analytics Projects</h3>
+<div class="scrim" id="scrim"></div>
 
-  <div class="grid">
+<main class="main">
 
-    <div class="card">
-      <h4>Advanced Retail Analytics</h4>
-      <p>
-        Performed end-to-end retail data analysis to identify sales trends,
-        profit drivers, and customer behavior for business decision-making.
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">// data analyst — analytics &amp; bi</p>
+      <h1>I turn raw data<br>into decisions worth<br>acting on.</h1>
+      <p class="hero-sub">
+        SAP-certified analyst working across Python, SQL, Excel and Power BI —
+        with a software engineering background that lets me build the tools
+        I analyze data with, not just the dashboards.
       </p>
-      <p class="tools">Python • SQL • Power BI</p>
-      <div class="links">
-        <a href="https://github.com/AbhilipsaPati0/Advance-Retail-Analytics-and-cutomer-Intelligence" target="_blank">GitHub</a>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+
+      <div class="kpi-row" id="kpiRow">
+        <div class="kpi">
+          <span class="kpi-value" data-count="10">0</span>
+          <span class="kpi-label">Projects shipped</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-value" data-count="5">0</span>
+          <span class="kpi-label">Certifications earned</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-value" data-count="6">0</span>
+          <span class="kpi-label">Core tools</span>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <h4>Sales Performance Analysis</h4>
-      <p>
-        Conducted exploratory data analysis to uncover revenue patterns
-        and top-performing products across categories.
+    <div class="hero-panel">
+      <div class="panel-window">
+        <div class="panel-head">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="panel-title">insights.dashboard</span>
+        </div>
+        <div class="panel-body">
+          <div class="chart-block">
+            <div class="chart-label">Sales growth by quarter</div>
+            <svg class="bar-chart" viewBox="0 0 280 110" aria-hidden="true">
+              <line x1="0" y1="100" x2="280" y2="100" class="axis"/>
+              <rect class="bar" x="20"  y="100" width="34" height="0" data-h="30"></rect>
+              <rect class="bar" x="80"  y="100" width="34" height="0" data-h="48"></rect>
+              <rect class="bar" x="140" y="100" width="34" height="0" data-h="70"></rect>
+              <rect class="bar" x="200" y="100" width="34" height="0" data-h="90"></rect>
+              <text x="37"  y="112" class="axis-label">Q1</text>
+              <text x="97"  y="112" class="axis-label">Q2</text>
+              <text x="157" y="112" class="axis-label">Q3</text>
+              <text x="217" y="112" class="axis-label">Q4</text>
+            </svg>
+          </div>
+          <div class="panel-feed" id="panelFeed">
+            <p class="feed-line"><span class="feed-tag">READ</span> customer_transactions.csv</p>
+            <p class="feed-line"><span class="feed-tag">RUN</span> rfm_segmentation.py</p>
+            <p class="feed-line"><span class="feed-tag">OK</span> 3 segments identified</p>
+            <p class="feed-line typing" id="typingLine"></p>
+          </div>
+        </div>
+      </div>
+      <img class="hero-photo" src="passport image.jpeg" alt="Portrait of Abhilipsa Pati">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <p class="eyebrow">about</p>
+    <h2 class="section-title">Background</h2>
+    <div class="about-grid">
+      <p class="about-lead">
+        I'm a Computer Science student focused on data analytics and business
+        intelligence, with a software development foundation that shapes how
+        I approach a dataset — I don't just visualize it, I understand the
+        systems that produced it.
       </p>
-      <p class="tools">Python • Pandas • Matplotlib</p>
-      <div class="links">
-        <a href="https://github.com/AbhilipsaPati0/Game-Sales-Analysis" target="_blank">GitHub</a>
+      <div class="about-detail">
+        <p>
+          My work spans exploratory analysis, customer segmentation, and
+          dashboarding, and now extends into enterprise systems through SAP,
+          where I've built applications for travel booking and employee
+          leave management. I enjoy taking a messy, real-world dataset and
+          turning it into something a business can act on.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <p class="eyebrow">skills</p>
+    <h2 class="section-title">What I work with</h2>
+
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3>Data Analytics &amp; BI</h3>
+        <ul>
+          <li>Python — Pandas, NumPy, Matplotlib, Seaborn</li>
+          <li>SQL (MySQL)</li>
+          <li>Excel — Pivot Tables, Power Query</li>
+          <li>Power BI — DAX, Dashboards</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Analytics + AI</h3>
+        <ul>
+          <li>Exploratory Data Analysis (EDA)</li>
+          <li>Retail &amp; Sales Analytics</li>
+          <li>Customer Segmentation (RFM)</li>
+          <li>Basic ML &amp; NLP concepts</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Enterprise Systems (SAP)</h3>
+        <ul>
+          <li>SAP-certified application development</li>
+          <li>Business process automation</li>
+          <li>Travel &amp; expense workflows</li>
+          <li>HR / leave management workflows</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Software Development</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Spring Boot, Angular</li>
+          <li>REST APIs &amp; databases</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <p class="eyebrow">projects</p>
+    <h2 class="section-title">Selected work</h2>
+
+    <div class="filter-row" id="filterRow">
+      <button class="filter-btn is-active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="analytics">Data Analytics</button>
+      <button class="filter-btn" data-filter="ai-dev">AI &amp; Software</button>
+      <button class="filter-btn" data-filter="sap">SAP / Enterprise</button>
+    </div>
+
+    <div class="project-grid" id="projectGrid">
+
+      <article class="project-card" data-cat="analytics">
+        <p class="project-tag">Data Analytics</p>
+        <h3>Advanced Retail Analytics</h3>
+        <p>End-to-end retail data analysis identifying sales trends, profit drivers, and customer behavior for business decision-making.</p>
+        <p class="tools">Python • SQL • Power BI</p>
+        <a href="https://github.com/AbhilipsaPati0/Advance-Retail-Analytics-and-cutomer-Intelligence" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="analytics">
+        <p class="project-tag">Data Analytics</p>
+        <h3>Sales Performance Analysis</h3>
+        <p>Exploratory analysis uncovering revenue patterns and top-performing products across categories.</p>
+        <p class="tools">Python • Pandas • Matplotlib</p>
+        <a href="https://github.com/AbhilipsaPati0/Game-Sales-Analysis" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="analytics">
+        <p class="project-tag">Data Analytics</p>
+        <h3>RFM Customer Segmentation</h3>
+        <p>Segmented customers into high-value, loyal, and at-risk groups using Recency, Frequency, and Monetary analysis.</p>
+        <p class="tools">Python • SQL</p>
+        <a href="https://github.com/AbhilipsaPati0/Customer-Segmentation-Analysis-Python-" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="analytics">
+        <p class="project-tag">Data Analytics</p>
+        <h3>Performance, Grade &amp; Insights Dashboard</h3>
+        <p>Interactive dashboard analyzing academic performance using custom SGPA/CGPA logic and insight-driven visualizations.</p>
+        <p class="tools">Excel • Power BI • DAX</p>
+        <a href="https://github.com/AbhilipsaPati0/Academic-Performance-Student-Insights" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="analytics">
+        <p class="project-tag">Data Analytics</p>
+        <h3>Urbanization Insights System</h3>
+        <p>Analyzed urban growth and infrastructure data to surface trends in population density and land use for planning decisions.</p>
+        <p class="tools">Python • SQL • Power BI</p>
+        <a href="https://github.com/AbhilipsaPati0" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="sap">
+        <p class="project-tag">SAP / Enterprise</p>
+        <h3>SAP Travel Booking System</h3>
+        <p>Built a travel booking application on SAP, covering trip requests, approvals, and booking workflows end to end.</p>
+        <p class="tools">SAP</p>
+        <a href="https://github.com/AbhilipsaPati0" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="sap">
+        <p class="project-tag">SAP / Enterprise</p>
+        <h3>SAP Employee Leave Management System</h3>
+        <p>Developed a leave management workflow on SAP, handling leave requests, approvals, and balance tracking for employees.</p>
+        <p class="tools">SAP</p>
+        <a href="https://github.com/AbhilipsaPati0" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="ai-dev">
+        <p class="project-tag">AI &amp; Software</p>
+        <h3>Emotional Support Chatbot</h3>
+        <p>AI-based chatbot that detects user sentiment and responds empathetically using NLP techniques.</p>
+        <p class="tools">Python • NLP • Gemini API</p>
+        <a href="https://github.com/AbhilipsaPati0/EmotionalSupport_chatbot" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="ai-dev">
+        <p class="project-tag">AI &amp; Software</p>
+        <h3>Hospital Management System</h3>
+        <p>Full-stack web application to manage patient records, appointments, and billing securely.</p>
+        <p class="tools">Spring Boot • Angular • MySQL</p>
+        <a href="https://github.com/AbhilipsaPati0/Hospital-Management-System-Angular-SpringBoot-" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="project-card" data-cat="ai-dev">
+        <p class="project-tag">AI &amp; Software</p>
+        <h3>Blog Web Application</h3>
+        <p>Responsive blogging platform with CRUD functionality, database integration, and a clean UI.</p>
+        <p class="tools">HTML • CSS • Java • MySQL</p>
+        <a href="https://github.com/AbhilipsaPati0/TechBlog-Website" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <p class="eyebrow">certifications</p>
+    <h2 class="section-title">Certifications</h2>
+
+    <p class="cert-group-label">SAP Certifications</p>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-mark">ABAP</div>
+        <div class="cert-body">
+          <h3>SAP ABAP</h3>
+          <p>Certified in ABAP programming — the language behind the custom logic in the travel booking and leave management systems above.</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-mark">Fiori</div>
+        <div class="cert-body">
+          <h3>SAP Fiori</h3>
+          <p>Certified in Fiori UX design — building the user-facing screens for SAP applications.</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-mark">IBP</div>
+        <div class="cert-body">
+          <h3>SAP IBP</h3>
+          <p>Certified in Integrated Business Planning — supply chain and process planning within SAP.</p>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <h4>RFM Customer Segmentation Analysis</h4>
-      <p>
-        Segmented customers into high-value, loyal, and at-risk groups
-        using Recency, Frequency, and Monetary analysis.
-      </p>
-      <p class="tools">Python • SQL</p>
-      <div class="links">
-        <a href="https://github.com/AbhilipsaPati0/Customer-Segmentation-Analysis-Python-" target="_blank">GitHub</a>
+    <p class="cert-group-label">Internship Certifications</p>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-mark">DA</div>
+        <div class="cert-body">
+          <h3>Infotact Solutions</h3>
+          <p>Data Analytics internship certification — hands-on project work applying Python, SQL, and Power BI to real datasets.</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-mark">Dev</div>
+        <div class="cert-body">
+          <h3>Edutech</h3>
+          <p>Software Development internship certification — full-stack project work using Spring Boot and Angular.</p>
+        </div>
       </div>
     </div>
+    
+  </section>
 
-    <div class="card">
-      <h4>Performance, Grade & Insights Dashboard</h4>
-      <p>
-        Built an interactive dashboard to analyze academic performance
-        using custom SGPA/CGPA logic and insight-driven visualizations.
-      </p>
-      <p class="tools">Excel • Power BI • DAX</p>
-      <div class="links">
-        <a href="https://github.com/AbhilipsaPati0/Academic-Performance-Student-Insights" target="_blank">GitHub</a>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <p class="eyebrow">experience</p>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Data Analytics Intern — Infotact Solutions</h3>
+        <ul>
+          <li>Worked on real-world datasets using Python, SQL, Excel, and Power BI.</li>
+          <li>Built dashboards and reports to support data-driven decisions.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h3>Software Development Intern — Edutech</h3>
+        <ul>
+          <li>Developed full-stack applications using Spring Boot and Angular.</li>
+          <li>Worked with APIs, databases, and backend logic.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h3>SAP Development</h3>
+        <ul>
+          <li>Built and configured SAP applications for travel booking and employee leave management.</li>
+          <li>Applied ABAP, Fiori, and IBP certification training to real workflow automation.</li>
+        </ul>
       </div>
     </div>
+  </section>
 
-  </div>
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <p class="eyebrow">contact</p>
+    <h2 class="section-title">Let's talk data</h2>
 
-  <h3 style="margin-top: 50px;">AI & Software Development Projects</h3>
-
-  <div class="grid">
-
-    <div class="card">
-      <h4>Emotional Support Chatbot</h4>
-      <p>
-        Developed an AI-based chatbot that detects user sentiment
-        and provides empathetic responses using NLP techniques.
-      </p>
-      <p class="tools">Python • NLP • Gemini API</p>
-      <div class="links">
-        <a href="https://github.com/AbhilipsaPati0/EmotionalSupport_chatbot" target="_blank">GitHub</a>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>Open to data analyst and BI roles — happy to walk through any of the projects above in more depth.</p>
+        <p><a href="mailto:abhilipsapati2@gmail.com">abhilipsapati2@gmail.com</a></p>
+        <p><a href="https://linkedin.com/in/abhilipsa-pati0" target="_blank" rel="noopener">linkedin.com/in/abhilipsa-pati0</a></p>
+        <p><a href="https://github.com/AbhilipsaPati0" target="_blank" rel="noopener">github.com/AbhilipsaPati0</a></p>
       </div>
+
+      <form class="contact-form" id="contact-form">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
     </div>
+  </section>
 
-    <div class="card">
-      <h4>Hospital Management System</h4>
-      <p>
-        Designed and developed a full-stack web application to manage
-        patient records, appointments, and billing securely.
-      </p>
-      <p class="tools">Spring Boot • Angular • MySQL</p>
-      <div class="links">
-        <a href="https://github.com/AbhilipsaPati0/Hospital-Management-System-Angular-SpringBoot-" target="_blank">GitHub</a>
-      </div>
-    </div>
+  <footer>
+    <p>© 2025 Abhilipsa Pati</p>
+  </footer>
 
-    <div class="card">
-      <h4>Blog Web Application</h4>
-      <p>
-        Built a responsive blogging platform with CRUD functionality,
-        database integration, and clean UI.
-      </p>
-      <p class="tools">HTML • CSS • Java • MySQL</p>
-      <div class="links">
-        <a href="https://github.com/AbhilipsaPati0/TechBlog-Website" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <h3>Experience</h3>
-
-  <div class="card">
-    <h4>Data Analytics Experience</h4>
-    <ul>
-      <li>Worked on real-world datasets using Python, SQL, Excel, and Power BI.</li>
-      <li>Built dashboards and reports to support data-driven decisions.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h4>Software Development Experience</h4>
-    <ul>
-      <li>Developed full-stack applications using Spring Boot and Angular.</li>
-      <li>Worked with APIs, databases, and backend logic.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h3>Contact</h3>
-  <p>Email: <strong>abhilipsapati2@gmail.com</strong></p>
-  <p>LinkedIn: linkedin.com/in/abhilipsa-pati0</p>
-  <p>GitHub: github.com/AbhilipsaPati0</p>
-</section>
-
-<footer>
-  <p>© 2025 Abhilipsa Pati</p>
-</footer>
+</main>
 
 <script src="script.js"></script>
 </body>
