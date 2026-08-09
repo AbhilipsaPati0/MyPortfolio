@@ -1,2 +1,2 @@
 https://abhilipsapati0.github.io/MyPortfolio/
-![image]([https://github.com/AbhilipsaPati0/MyPortfolio/blob/c45aa995fdacf615fa1ceca2ca337ec9932a7f51/Screenshot%202026-01-31%20165634.png](https://github.com/AbhilipsaPati0/MyPortfolio/blob/main/Screenshot%202026-08-09%20142715.png))
+![image]([[https://github.com/AbhilipsaPati0/MyPortfolio/blob/c45aa995fdacf615fa1ceca2ca337ec9932a7f51/Screenshot%202026-01-31%20165634.png](https://github.com/AbhilipsaPati0/MyPortfolio/blob/main/Screenshot%202026-08-09%20142715.png)](https://github.com/AbhilipsaPati0/MyPortfolio/blob/849119d27b6c7b01cc81248a322df98c8a747670/Screenshot%202026-08-09%20142715.png))
