@@ -2,7 +2,7 @@
 /* =========================================================
    ABHILIPSA PATI — PORTFOLIO INTERACTIONS
    File: script.js
-   ========================================================= */
+========================================================= */
 
 "use strict";
 
@@ -69,9 +69,7 @@ if (scrim) {
 }
 
 $$('#sidebar a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", () => {
-    closeMenu();
-  });
+  link.addEventListener("click", closeMenu);
 });
 
 document.addEventListener("keydown", (event) => {
@@ -94,7 +92,13 @@ $$('a[href^="#"]').forEach((link) => {
 
     if (!href || href === "#") return;
 
-    const target = document.querySelector(href);
+    let target;
+
+    try {
+      target = document.querySelector(href);
+    } catch {
+      return;
+    }
 
     if (!target) return;
 
@@ -105,9 +109,7 @@ $$('a[href^="#"]').forEach((link) => {
       block: "start",
     });
 
-    /*
-     * Update the URL hash without causing a second jump.
-     */
+    // Update the URL without triggering a second jump.
     if (history.replaceState) {
       history.replaceState(null, "", href);
     }
@@ -121,7 +123,12 @@ const navLinks = $$('#sidebar a[href^="#"]');
 const observedSections = navLinks
   .map((link) => {
     const href = link.getAttribute("href");
-    return href ? document.querySelector(href) : null;
+
+    try {
+      return href ? document.querySelector(href) : null;
+    } catch {
+      return null;
+    }
   })
   .filter(Boolean);
 
@@ -131,6 +138,7 @@ function setActiveNav(sectionId) {
     const isActive = href === `#${sectionId}`;
 
     link.classList.toggle("active", isActive);
+    link.classList.toggle("is-current", isActive);
 
     if (isActive) {
       link.setAttribute("aria-current", "location");
@@ -208,11 +216,6 @@ filterButtons.forEach((button) => {
   });
 });
 
-/*
- * Keep all projects visible if there is no filter interface.
- * The initial HTML should already show all projects.
- */
-
 /* ---------- 6. SCROLL REVEAL ANIMATIONS ---------- */
 
 const revealCandidates = [
@@ -284,9 +287,7 @@ function animateCounter(element) {
   function updateCounter(now) {
     const progress = Math.min((now - startTime) / duration, 1);
 
-    /*
-     * Ease-out cubic: fast at the start, smooth at the end.
-     */
+    // Ease-out cubic.
     const eased = 1 - Math.pow(1 - progress, 3);
     const currentValue = Math.round(target * eased);
 
@@ -326,9 +327,16 @@ if ("IntersectionObserver" in window && !prefersReducedMotion) {
   counterElements.forEach(animateCounter);
 }
 
-/* ---------- 8. DASHBOARD BAR ANIMATIONS ---------- */
+/* ---------- 8. DASHBOARD SVG BAR ANIMATIONS ---------- */
 
-const dashboardBars = $$(".bar[data-h]");
+/*
+  IMPORTANT:
+  These bars are SVG <rect> elements.
+  Animate their SVG attributes, not CSS height or width.
+  The chart in the supplied HTML uses y=100 as its baseline.
+*/
+
+const dashboardBars = $$("svg rect.bar[data-h]");
 
 function animateBars() {
   dashboardBars.forEach((bar, index) => {
@@ -336,16 +344,33 @@ function animateBars() {
 
     if (!Number.isFinite(rawHeight)) return;
 
-    /*
-     * Treat data-h as a percentage and keep it within 0–100.
-     */
     const height = Math.max(0, Math.min(100, rawHeight));
+    const baseline = Number(bar.dataset.baseline || 100);
 
-    bar.style.setProperty("--bar-height", `${height}%`);
+    // Remove any conflicting CSS geometry or animation.
+    bar.style.removeProperty("height");
+    bar.style.removeProperty("width");
+    bar.style.removeProperty("--bar-height");
+    bar.style.removeProperty("animation");
+    bar.style.animation = "none";
 
-    if (!prefersReducedMotion) {
-      bar.style.animationDelay = `${index * 65}ms`;
+    // Ensure the SVG bars have a visible color.
+    bar.setAttribute("fill", "#A7E8D3");
+
+    if (prefersReducedMotion) {
+      bar.setAttribute("height", String(height));
+      bar.setAttribute("y", String(baseline - height));
+      return;
     }
+
+    // Begin at zero height, then grow to the target.
+    bar.setAttribute("height", "0");
+    bar.setAttribute("y", String(baseline));
+
+    window.setTimeout(() => {
+      bar.setAttribute("height", String(height));
+      bar.setAttribute("y", String(baseline - height));
+    }, index * 65);
   });
 }
 
@@ -372,12 +397,6 @@ $$(".project-card").forEach((card) => {
 });
 
 /* ---------- 10. EXTERNAL LINK SAFETY ---------- */
-
-/*
- * External links open in a new tab only if the HTML
- * explicitly requests target="_blank".
- * Add rel="noopener noreferrer" where appropriate.
- */
 
 $$('a[target="_blank"]').forEach((link) => {
   const relTokens = new Set(
@@ -408,6 +427,7 @@ function showFormStatus(message, type = "success") {
 
 function getFieldValue(form, fieldName) {
   const field = form.elements.namedItem(fieldName);
+
   return field && "value" in field
     ? field.value.trim()
     : "";
@@ -430,6 +450,7 @@ if (contactForm) {
       return;
     }
 
+    // Correct email validation pattern.
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(email)) {
@@ -448,11 +469,11 @@ if (contactForm) {
     }
 
     /*
-     * This portfolio has no backend email service.
-     * Prepare a message in the visitor's default email app.
-     */
-    const recipient = "abhilipsapati2@gmail.com";
+      This portfolio has no backend email service.
+      Prepare the enquiry in the visitor's email application.
+    */
 
+    const recipient = "abhilipsapati2@gmail.com";
     const emailSubject =
       subject || `Portfolio enquiry from ${name}`;
 
@@ -485,10 +506,6 @@ yearElements.forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
 
-/*
- * If your footer has an element with id="year",
- * it will also display the current year.
- */
 const footerYear = $("#year");
 
 if (footerYear) {
@@ -497,12 +514,10 @@ if (footerYear) {
 
 /* ---------- 13. INITIAL PAGE STATE ---------- */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializePortfolio() {
   closeMenu();
 
-  /*
-   * Ensure the default project filter is applied.
-   */
+  // Apply the default project filter if one exists.
   const defaultFilter = filterButtons.find(
     (button) => button.classList.contains("active")
   );
@@ -511,12 +526,15 @@ document.addEventListener("DOMContentLoaded", () => {
     filterProjects(defaultFilter.dataset.filter || "all");
   }
 
-  /*
-   * If the page opens with a hash, close the mobile
-   * navigation and scroll to the matching section.
-   */
+  // Support opening the page directly at a section URL.
   if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
+    let target = null;
+
+    try {
+      target = document.querySelector(window.location.hash);
+    } catch {
+      target = null;
+    }
 
     if (target) {
       requestAnimationFrame(() => {
@@ -527,13 +545,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializePortfolio);
+} else {
+  initializePortfolio();
+}
+
+/* ---------- 14. DEBUG MESSAGE ---------- */
 
 console.log(
   "%cAbhilipsa Pati | Portfolio",
   "color: #167D78; font-size: 16px; font-weight: bold;"
 );
 
-console.log(
-  "Portfolio interactions initialized successfully."
-);
+console.log("Portfolio interactions initialized successfully.");
